@@ -1,10 +1,14 @@
 import './App.css';
-import Home from './pages/Home/Home';
+// import Home from './pages/Home/Home';
+import SinglePost from './pages/SinglePost/SinglePost';
+import Topbar from './components/Topbar/Topbar'
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Topbar />
+      {/* <Home /> */}
+      <SinglePost />
     </div>
   );
 }
