@@ -1,8 +1,9 @@
 import './App.css';
+import Topbar from './components/Topbar/Topbar'
+import UserSettings from './pages/UserSettings/UserSettings';
 // import Home from './pages/Home/Home';
 // import SinglePost from './pages/SinglePost/SinglePost';
-import Topbar from './components/Topbar/Topbar'
-import WritePost from './pages/WritePost/WritePost';
+// import WritePost from './pages/WritePost/WritePost';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Topbar />
       {/* <Home /> */}
       {/* <SinglePost /> */}
-      <WritePost />
+      {/* <WritePost /> */}
+      <UserSettings />
     </div>
   );
 }

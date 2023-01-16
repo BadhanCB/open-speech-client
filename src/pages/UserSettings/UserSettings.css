@@ -1,0 +1,71 @@
+.user-settings{
+    display: flex;
+}
+.user-settings-wrapper{
+    flex: 9;
+    padding: 20px;
+}
+.user-setting-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-setting-update{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: lightcoral;
+}
+.user-setting-delete{
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+.user-settings-form{
+    display: flex;
+    flex-direction: column;
+}
+.userPP{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.userPP > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.profile-pic-icon{
+    font-size: 25px;
+    padding: 6px;
+    background-color: lightcoral;
+    border-radius: 50%;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.user-settings-form > label{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.user-settings-form > input{
+    color: gray;
+    margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+.user-settings-form > input:focus{
+    outline: none;
+}
+.user-settings-submit{
+    width: 150px;
+    align-self: center;
+    border: none;
+    background-color: teal;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
