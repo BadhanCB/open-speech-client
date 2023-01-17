@@ -1,5 +1,6 @@
 .user-settings{
     display: flex;
+    flex-wrap: wrap;
 }
 .user-settings-wrapper{
     flex: 9;

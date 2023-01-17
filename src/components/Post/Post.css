@@ -1,6 +1,6 @@
 .post{
-    width: 385px;
-    margin: 0px 25px 40px 25px;
+    width: 18rem;
+    margin: 0 1rem 2rem 1rem;
 }
 .post-img{
     width: 100%;
@@ -17,7 +17,7 @@
     color: #be9656;
     line-height: 20px;
     margin-top: 15px;
-    margin-right: 10px;
+    margin-right: 0.5rem;
     cursor: pointer;
 }
 .post-title{
