@@ -1,6 +1,8 @@
 import './App.css';
 import Topbar from './components/Topbar/Topbar'
-import UserSettings from './pages/UserSettings/UserSettings';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+// import UserSettings from './pages/UserSettings/UserSettings';
 // import Home from './pages/Home/Home';
 // import SinglePost from './pages/SinglePost/SinglePost';
 // import WritePost from './pages/WritePost/WritePost';
@@ -12,7 +14,9 @@ function App() {
       {/* <Home /> */}
       {/* <SinglePost /> */}
       {/* <WritePost /> */}
-      <UserSettings />
+      {/* <UserSettings /> */}
+      {/* <Login /> */}
+      <Register />
     </div>
   );
 }
