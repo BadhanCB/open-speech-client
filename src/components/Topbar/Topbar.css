@@ -25,6 +25,7 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
 }
 .top-socal-icon{
     font-size: 20px;
@@ -47,6 +48,9 @@
 }
 .menu-list-item{
     cursor: pointer;
+}
+.route-link{
+    text-decoration: none;
 }
 .top-search-icon{
     font-size: 18px;

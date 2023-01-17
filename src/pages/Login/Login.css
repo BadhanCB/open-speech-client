@@ -27,7 +27,7 @@
     background-color: white;
     border: none;
 }
-.login-btn{
+.login-form-login-btn{
     margin-top: 20px;
     background-color: lightcoral;
     border: none;
@@ -36,7 +36,7 @@
     padding: 10px;
     cursor: pointer;
 }
-.Register-btn{
+.login-form-Register-btn{
     position: absolute;
     top: 60px;
     right: 20px;

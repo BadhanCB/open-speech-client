@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Post.css";
 
 const Post = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="post">
             <img
@@ -14,7 +17,7 @@ const Post = () => {
                     <span className="category">Tech</span>
                     <span className="category">Programming</span>
                 </div>
-                <h4 className="post-title">Web Programming</h4>
+                <h4 className="post-title" onClick={() => navigate("/post/1")}>Web Programming</h4>
                 <hr />
                 <p>
                     <small className="post-date">1 Hour Ago</small>
