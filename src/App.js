@@ -8,6 +8,8 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import UserSettings from './pages/UserSettings/UserSettings';
 import SinglePost from './pages/SinglePost/SinglePost';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   const router = createBrowserRouter([
@@ -39,6 +41,14 @@ function App() {
         {
           path: "/post/:postID",
           element: <SinglePost />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
       ],
     }

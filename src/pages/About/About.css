@@ -1,0 +1,21 @@
+.about {
+    height: calc(100vh - 50px);
+    width: 100vw;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(
+            rgba(83, 83, 83, 0.7),
+            rgba(48, 48, 48, 0.7)
+        ),
+        url("https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+}
+.about > h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Lora', serif;
+}
+.about > p {
+    text-align: justify;
+    font-family: 'Varela Round', sans-serif;
+}
