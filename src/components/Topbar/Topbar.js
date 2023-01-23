@@ -4,7 +4,7 @@ import {
     faSquarePinterest,
     faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
@@ -12,10 +12,13 @@ import "./Topbar.css";
 
 const Topbar = () => {
     const [isLogedIn, setIsLogedIn] = useState(true);
+    const [isMenuShowed, setIsMenuShowed] = useState(false);
+
+    const sideBar = () => setIsMenuShowed(prevSt => !prevSt);
 
     return (
         <div className="top-bar">
-            <div className="socal-container">
+            <div className={isMenuShowed ? "socal-container active" : "socal-container"}>
                 <FontAwesomeIcon
                     className="top-socal-icon"
                     icon={faFacebookSquare}
@@ -33,7 +36,7 @@ const Topbar = () => {
                     icon={faInstagramSquare}
                 />
             </div>
-            <div className="menu-container">
+            <div className={isMenuShowed ? "menu-container active" : "menu-container"}>
                 <ul className="menu-list">
                     <li className="menu-list-item">
                         <Link to={"/"} className="route-link">
@@ -57,7 +60,7 @@ const Topbar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="option-container">
+            <div className={isMenuShowed ? "option-container active" : "option-container"}>
                 {isLogedIn ? (
                     <Link to={"/settings"}>
                         <img
@@ -84,6 +87,9 @@ const Topbar = () => {
                 )}
                 <FontAwesomeIcon className="top-search-icon" icon={faSearch} />
             </div>
+            <button className="toggle-btn" onClick={sideBar}>
+                <FontAwesomeIcon icon={faBars} />
+            </button>
         </div>
     );
 };
