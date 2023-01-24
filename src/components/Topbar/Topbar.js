@@ -1,31 +1,47 @@
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Topbar.css";
 import SocialOption from "../SocialOption/SocialOption";
 import MenuList from "../MenuList/MenuList";
+import { Context } from "../../context/Context";
+import imageNotFound from "../../images/image-not-found.jpg";
 
 const Topbar = () => {
-    const [isLogedIn, setIsLogedIn] = useState(false);
+    const { user } = useContext(Context);
     const [isMenuShowed, setIsMenuShowed] = useState(false);
 
-    const sideBar = () => setIsMenuShowed(prevSt => !prevSt);
+    const sideBar = () => setIsMenuShowed((prevSt) => !prevSt);
 
     return (
         <div className="top-bar">
-            <div className={isMenuShowed ? "socal-container active" : "socal-container"}>
+            <div
+                className={
+                    isMenuShowed ? "socal-container active" : "socal-container"
+                }
+            >
                 <SocialOption />
             </div>
-            <div className={isMenuShowed ? "menu-container active" : "menu-container"}>
+            <div
+                className={
+                    isMenuShowed ? "menu-container active" : "menu-container"
+                }
+            >
                 <MenuList />
             </div>
-            <div className={isMenuShowed ? "option-container active" : "option-container"}>
-                {isLogedIn ? (
+            <div
+                className={
+                    isMenuShowed
+                        ? "option-container active"
+                        : "option-container"
+                }
+            >
+                {user ? (
                     <Link to={"/settings"}>
                         <img
                             className="top-image"
-                            src="https://images.pexels.com/photos/210661/pexels-photo-210661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            src={user.photoURL || imageNotFound}
                             alt="Banner Img"
                         />
                     </Link>

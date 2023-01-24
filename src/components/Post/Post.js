@@ -1,51 +1,33 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Post.css";
+import imageNotFound from "../../images/image-not-found.jpg";
 
-const Post = () => {
+const Post = ({ post }) => {
     const navigate = useNavigate();
-
+    const { _id, title, desc, createdAt, photo, categories } = post;
+    const photoURL = "https://open-speech-server-production.up.railway.app/images/" + photo;
+    
     return (
         <div className="post">
             <img
                 className="post-img"
-                src="https://images.pexels.com/photos/3937174/pexels-photo-3937174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src={photoURL || imageNotFound}
                 alt="Post Img"
             />
             <div className="post-info">
                 <div className="post-categories">
-                    <span className="category">Tech</span>
-                    <span className="category">Programming</span>
+                    {
+                        categories.map(cat => <span className="category" key={Math.random()}>{cat}</span>)
+                    }
                 </div>
-                <h4 className="post-title" onClick={() => navigate("/post/1")}>Web Programming</h4>
+                <h4 className="post-title" onClick={() => navigate(`/post/${_id}`)}>{title}</h4>
                 <hr />
                 <p>
-                    <small className="post-date">1 Hour Ago</small>
+                    <small className="post-date">{new Date(createdAt).toDateString()}</small>
                 </p>
             </div>
-            <p className="post-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                hic sint quasi cum voluptatum doloribus aperiam illo quaerat
-                iste fugit eveniet explicabo, in repellendus consequatur eius
-                voluptas? Molestiae totam dolorem dolor fugiat, magni dolores
-                voluptatibus nostrum illum vel, animi, quod possimus iure.
-                Provident laboriosam nesciunt quisquam fuga aspernatur deserunt
-                adipisci.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                hic sint quasi cum voluptatum doloribus aperiam illo quaerat
-                iste fugit eveniet explicabo, in repellendus consequatur eius
-                voluptas? Molestiae totam dolorem dolor fugiat, magni dolores
-                voluptatibus nostrum illum vel, animi, quod possimus iure.
-                Provident laboriosam nesciunt quisquam fuga aspernatur deserunt
-                adipisci.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                hic sint quasi cum voluptatum doloribus aperiam illo quaerat
-                iste fugit eveniet explicabo, in repellendus consequatur eius
-                voluptas? Molestiae totam dolorem dolor fugiat, magni dolores
-                voluptatibus nostrum illum vel, animi, quod possimus iure.
-                Provident laboriosam nesciunt quisquam fuga aspernatur deserunt
-                adipisci.
-            </p>
+            <p className="post-description">{desc}</p>
         </div>
     );
 };

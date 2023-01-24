@@ -1,7 +1,16 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 
 const MenuList = () => {
+    const { user, dispatch } = useContext(Context);
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        dispatch({ type: "LOGOUT"});
+    }
+
     return (
         <ul className="menu-list">
             <li className="menu-list-item">
@@ -24,6 +33,13 @@ const MenuList = () => {
                     WRITE
                 </Link>
             </li>
+            {user && (
+                <li className="menu-list-item">
+                    <button onClick={handleLogout}  className="route-link-btn">
+                        LOGOUT
+                    </button>
+                </li>
+            )}
         </ul>
     );
 };

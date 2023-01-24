@@ -10,6 +10,7 @@ import UserSettings from './pages/UserSettings/UserSettings';
 import SinglePost from './pages/SinglePost/SinglePost';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import { ContextProvider } from './context/Context';
 
 function App() {
   const router = createBrowserRouter([
@@ -55,7 +56,9 @@ function App() {
   ]);
 
   return (
-    <RouterProvider router={router} />
+    <ContextProvider>
+      <RouterProvider router={router} />
+    </ContextProvider>
   );
 }
 

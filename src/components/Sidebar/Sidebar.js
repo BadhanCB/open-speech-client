@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import Categories from "../Categories/Categories";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -25,15 +26,7 @@ const Sidebar = () => {
                 </p>
             </div>
             <div className="sidebar-item">
-                <span className="sidebar-title">CATEGORIES</span>
-                <ul className="sidebar-list">
-                    <li className="sidebarlist-item">Life</li>
-                    <li className="sidebarlist-item">Music</li>
-                    <li className="sidebarlist-item">Style</li>
-                    <li className="sidebarlist-item">Sports</li>
-                    <li className="sidebarlist-item">Tech</li>
-                    <li className="sidebarlist-item">Cinema</li>
-                </ul>
+                <Categories />
             </div>
             <div className="sidebar-item">
                 <span className="sidebar-title">FOLLOW US</span>
